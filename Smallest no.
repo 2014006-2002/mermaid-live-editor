@@ -1,0 +1,12 @@
+graph TD
+1([Start]) --> 2["a ← x<br/> b ← y<br/>c ← z<br/>"]
+2 --> 3{b < a}
+3 -->|Yes| 4{b < c}
+4 -->|Yes| 8[/Output b/]
+4 --> |No| 6[/Output c/]
+3 -->|No| 5{a < c}
+5 --> |No| 6
+5 --> |Yes| 7[/Output a/]
+7 --> 9([Stop])
+6 --> 9
+8 --> 9
